@@ -13,6 +13,7 @@ class SubscriberApiController extends Controller
     public function processMessage(Request $data)
     {
         if (count($data->all()) > 0) {
+            Log::info($data->all());
             return response()->json([
                 'message' => 'successful',
             ], 200);
